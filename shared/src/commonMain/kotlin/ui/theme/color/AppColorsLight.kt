@@ -3,10 +3,10 @@ package ui.theme.color
 import androidx.compose.material3.lightColorScheme
 
 internal fun lightColorScheme(): AppColors = AppColors(
-    ripple = AppColorPalette.blue,
+    ripple = AppColorPalette.sand,
     splash = AppColorPalette.blue,
     materialColors = lightColorScheme(
-        primary = AppColorPalette.green,
+        primary = AppColorPalette.brown,
         error = AppColorPalette.red,
     ),
 )

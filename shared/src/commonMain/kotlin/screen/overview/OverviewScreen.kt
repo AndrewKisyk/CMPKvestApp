@@ -112,7 +112,7 @@ private fun TabNavigation(
 ) {
     NavHost(
         navController = tabNavHostController,
-        startDestination = Route.Home.route,
+        startDestination = Route.Map.route,
         modifier = modifier.fillMaxSize(),
     ) {
         composable(route = Route.Home.route) {

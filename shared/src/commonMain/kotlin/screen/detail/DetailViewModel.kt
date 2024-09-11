@@ -12,7 +12,7 @@ import repository.settings.Settings
 
 class DetailViewModel(
     initialTick: Int,
-    settings: Settings,
+    settings: Settings
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(initialTick)

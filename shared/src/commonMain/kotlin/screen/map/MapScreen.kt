@@ -14,6 +14,9 @@ import kotlinx.collections.immutable.persistentListOf
 import kotlinx.coroutines.delay
 import model.coordinate.LatLng
 import model.coordinate.Polygon
+import org.koin.compose.viewmodel.koinViewModel
+import permissions.compose.BindEffect
+import screen.onboarding.OnboardingViewModel
 import ui.component.Map
 
 @Composable
@@ -21,11 +24,19 @@ fun MapScreen(
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(0.dp),
 ) {
+    val viewModel = koinViewModel<MapViewModel>()
+
+    BindEffect(viewModel.permissionsController)
+
+    LaunchedEffect(Unit) {
+        viewModel.start()
+    }
+
     var polygons by remember { mutableStateOf(persistentListOf<Polygon>()) }
     Map(
         modifier = modifier.fillMaxSize(),
         contentPadding = contentPadding,
-        polygons = polygons,
+        polygons = polygons
     )
     LaunchedEffect(Unit) {
         delay(5_000)

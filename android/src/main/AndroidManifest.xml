@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
+    <uses-sdk tools:overrideLibrary="com.mapbox.maps"/>
     <application
         android:name=".MainApplication"
         android:allowBackup="true"
@@ -13,7 +13,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/App.Splash">
+        android:theme="@style/App.Splash"
+        tools:overrideLibrary="com.mapbox.maps">
 
         <activity
             android:name=".MainActivity"

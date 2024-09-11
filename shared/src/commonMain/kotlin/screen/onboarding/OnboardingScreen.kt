@@ -25,7 +25,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import composemultiplatform.shared.generated.resources.Res
+import composemultiplatform.shared.generated.resources.onboarding
+import composemultiplatform.shared.generated.resources.onboarding_1
+import composemultiplatform.shared.generated.resources.onboarding_2
+import composemultiplatform.shared.generated.resources.onboarding_3
 import kotlinx.coroutines.delay
+import org.jetbrains.compose.resources.painterResource
 import org.koin.compose.viewmodel.koinViewModel
 import ui.icon.Icons
 import ui.icon.icons.AccountCircle
@@ -68,9 +74,9 @@ private fun Splash(modifier: Modifier = Modifier) {
         modifier = modifier.fillMaxSize().background(color = App.colors.splash),
     ) {
         Image(
-            imageVector = Icons.Home,
+            painter = painterResource(Res.drawable.onboarding),
             contentDescription = null,
-            modifier = Modifier.fillMaxSize(fraction = 0.5f).aspectRatio(1f),
+            modifier = Modifier.fillMaxSize().aspectRatio(1f),
         )
     }
 }
@@ -84,12 +90,9 @@ private fun Onboarding(
     val imageVector by remember(imageIndex) {
         derivedStateOf {
             when (imageIndex) {
-                0 -> Icons.AccountCircle
-                1 -> Icons.Build
-                2 -> Icons.Call
-                3 -> Icons.DateRange
-                4 -> Icons.Mail
-                5 -> Icons.Favorite
+                0 -> Res.drawable.onboarding_1
+                1 -> Res.drawable.onboarding_2
+                2 -> Res.drawable.onboarding_3
                 else -> null
             }
         }
@@ -104,12 +107,12 @@ private fun Onboarding(
     ) { vector ->
         if (vector != null) {
             Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
-                Icon(
-                    imageVector = vector,
+                Image(
+                    painterResource(vector),
                     contentDescription = null,
                     modifier = Modifier
                         .aspectRatio(ratio = 1f)
-                        .fillMaxWidth(fraction = 0.7f),
+                        .fillMaxSize(),
                 )
             }
         } else {

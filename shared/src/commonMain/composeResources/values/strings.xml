@@ -9,4 +9,5 @@
         <item quantity="one">Value for one</item>
         <item quantity="other">Value for other %1$s</item>
     </plurals>
+    <string name="mapbox_style">mapbox://styles/andkis12/cm0tk709r00ql01pm835p0l70</string>
 </resources>

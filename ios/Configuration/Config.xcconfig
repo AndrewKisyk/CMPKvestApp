@@ -1,5 +1,5 @@
 TEAM_ID=
-BUNDLE_ID=dev.schattauer.compose
+BUNDLE_ID=com.dreamdev.kvest
 APP_NAME=Compose Multiplatform
 
-MAPBOX_PUBLIC_TOKEN=pk...
+MAPBOX_PUBLIC_TOKEN=pk.eyJ1IjoidGhlYnJva2Vub3JjaGVzdHJhIiwiYSI6ImNsc3ZyaXJ5YjBscjcyaW8xa2c2MmV5cXoifQ.QQjVBLjqEyTyZRjUAITdEQ
